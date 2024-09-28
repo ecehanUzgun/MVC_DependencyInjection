@@ -6,10 +6,19 @@ namespace MVC_DependencyInjection.Services.Concretes
 {
     public class ProductService : IProductService
     {
+        #region Product Controller'da hata veriyor
+        //NorthwindContext northwindContext = new NorthwindContext();
+        //private readonly NorthwindContext _db;
+        //public ProductService(NorthwindContext northwindContext)
+        //{
+        //    _db = northwindContext;
+        //} 
+        #endregion
+
         private readonly NorthwindContext _db;
-        public ProductService(NorthwindContext db)
+        public ProductService()
         {
-            _db = db;
+            _db = new NorthwindContext();
         }
 
         public void CreateProduct(Product product)
