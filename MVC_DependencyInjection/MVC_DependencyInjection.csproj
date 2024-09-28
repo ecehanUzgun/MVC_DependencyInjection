@@ -14,9 +14,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Data\FakeData\" />
-    <Folder Include="Models\Data\OriginalData\" />
-  </ItemGroup>
-
 </Project>
