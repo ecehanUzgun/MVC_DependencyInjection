@@ -34,19 +34,33 @@ namespace MVC_DependencyInjection.Controllers
         [HttpPost]
         public IActionResult Create(Product product)
         {
-            _productService.CreateProduct(product);
+                _productService.CreateProduct(product);
+                return RedirectToAction("Index");
         }
 
         //Product Update
-        public IActionResult Update()
+        public IActionResult Update(int id)
         {
-            return View();
+            Product updated = _productService.GetProductById(id);
+            if (updated != null)
+            {
+                return View(updated);
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Update(Product updated)
+        {
+            _productService.UpdateProduct(updated);
+            return RedirectToAction("Index");
         }
 
         //Product Delete
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return View();
+            _productService.DeleteProduct(id);
+            return RedirectToAction("Index");
         }
     }
 }

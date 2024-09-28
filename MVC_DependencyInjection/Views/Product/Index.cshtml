@@ -1,0 +1,14 @@
+﻿@model List<MVC_DependencyInjection.Models.Northwind.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Product Index</h1>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.ProductName</li>
+    }
+</ul>
